@@ -16,8 +16,8 @@ class Sorting extends Component {
 
     resetArray() {
         const array = [];
-        for (let i = 0; i < 310; i++) {
-            array.push(randomIntFromFunction(5, 700));
+        for (let i = 0; i < 100; i++) {
+            array.push(randomIntFromFunction(10, 500));
         }
         this.setState({ array });
     }
@@ -27,17 +27,19 @@ class Sorting extends Component {
 
         return (
             <React.Fragment>
-        <button onClick={() => this.componentDidMount()}>Generate</button>
-        <div className="array-container">
-          {array.map((value, idx) => (
-            <div
-              className="array-bar"
-              key={idx}
-              style={{ height: `${value}px` }}
-            />
-          ))}
-        </div>
-      </React.Fragment>
+            <button onClick={() => this.resetArray()}>Generate</button><br />
+            <div className="array-container">
+            {array.map((value, idx) => (
+                <div
+                className="array-bar"
+                key={idx}
+                style={{ 
+                    height:`${value}px`
+                 }}
+                />
+                ))}
+            </div>
+            </React.Fragment>
         );
     }
 }
